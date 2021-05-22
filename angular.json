@@ -124,5 +124,8 @@
       }
     }
   },
-  "defaultProject": "newsapi"
+  "defaultProject": "newsapi",
+  "cli": {
+    "analytics": "3bb136bc-8af3-4182-b572-dd83caeacd39"
+  }
 }

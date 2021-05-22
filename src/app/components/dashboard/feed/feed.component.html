@@ -1,0 +1,87 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-2">
+            
+
+      <div class="mydahsboard">
+          <h1>Choose A Category</h1>
+        <div class="form-check form-switch">
+            <input class="form-check-input" (change)='heregen($event)' type="checkbox" id="flexSwitchCheckDefaultge">
+            <label class="form-check-label" for="flexSwitchCheckDefault">General</label>
+          </div>
+          <div class="form-check form-switch">
+            <input class="form-check-input" (change)='herebus($event)' type="checkbox" id="flexSwitchCheckDefaultbu">
+            <label class="form-check-label" for="flexSwitchCheckDefault">Business</label>
+          </div>
+          <div class="form-check form-switch">
+            <input class="form-check-input" (change)='heretech($event)' type="checkbox" id="flexSwitchCheckDefaultte">
+            <label class="form-check-label" for="flexSwitchCheckDefault">Technology</label>
+          </div>
+          <div class="form-check form-switch">
+            <input class="form-check-input" (change)='heresp($event)' type="checkbox" id="flexSwitchCheckDefaultsp">
+            <label class="form-check-label" for="flexSwitchCheckDefault">Sports</label>
+          </div>
+          <div class="form-check form-switch">
+            <input class="form-check-input" (change)='heresc($event)' type="checkbox" id="flexSwitchCheckDefaultsc">
+            <label class="form-check-label" for="flexSwitchCheckDefault">Science</label>
+          </div>
+          <div class="form-check form-switch">
+            <input class="form-check-input " (change)='hereen($event)' type="checkbox" id="flexSwitchCheckDefaulten">
+            <label class="form-check-label" for="flexSwitchCheckDefault">Entertainment</label>
+          </div>
+          <div class="form-check form-switch">
+            <input class="form-check-input" (change)='herehe($event)' type="checkbox" id="flexSwitchCheckDefaulthe">
+            <label class="form-check-label" for="flexSwitchCheckDefault">Health</label>
+          </div>
+          <div>
+              <input type="text" name="search" style="display: block;width: 100%;margin: 20px auto;" placeholder="Search keywords..." id="mysearch" [(ngModel)]='data'>
+              <button style="display:block;width: 100%;margin: 20px auto;" class="btn btn-info" (click)='search()'>Search</button>
+          </div>
+    </div>
+
+
+
+ </div>
+        <div class="col-10">
+            
+
+    <div class="row justify-content-between" *ngIf= 'mydata' >
+        <div class="col-3"  *ngFor = 'let item of mydata.data;index as i'>
+            <div class="checking" >  
+            <div class="card">
+                <div  *ngIf='item.image'><img src="{{item.image}}" class="card-img-top" alt="NewsImage"></div>
+                <div class="card-body">
+                  <h5 class="card-title">{{item.title}}</h5>
+                  <p class="card-text">{{item.description}}</p>
+                  <a href="{{item.url}}" target="_blank" class="btn btn-primary">Read More</a>
+                </div>
+              </div>
+          
+            </div>
+           
+        </div>
+      
+    </div>
+
+
+    <div class="row justify-content-between" *ngIf= 'newdata' >
+        <div class="col-3"  *ngFor = 'let item of newdata.articles;index as i'>
+            <div class="checking" >  
+            <div class="card">
+                <div  *ngIf='item.urlToImage'><img src="{{item.urlToImage}}" class="card-img-top" alt="NewsImage"></div>
+                <div class="card-body">
+                  <h5 class="card-title">{{item.title}}</h5>
+                  <p class="card-text">{{item.description}}</p>
+                  <a href="{{item.url}}" target="_blank" class="btn btn-primary">Read More</a>
+                </div>
+              </div>
+          
+            </div>
+           
+        </div>
+       
+    </div>
+
+        </div>
+    </div>
+</div>
